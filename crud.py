@@ -36,6 +36,7 @@ def inserer_produit(lib_p, qte_p, pu_p, id_categorie):
 #inserer_produit("New balance",25,12000,1)
 #inserer_produit("Rolex",12,25000,2)
 def lister_categorie():
+    categories = []
     try:
         conn = crer_une_connexion()
         cursor = conn.cursor()
@@ -50,6 +51,7 @@ def lister_categorie():
         if conn:
             cursor.close()
             conn.close()
+    return categories
 #lister_categorie()
 def lister_produit():
     try:
