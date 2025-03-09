@@ -1,9 +1,9 @@
 import sqlite3
-from connexion import crer_une_connexion
+from connexion import creer_une_connexion
 
 def inserer_categorie(nom_cat):
     try:
-        conn = crer_une_connexion()
+        conn = creer_une_connexion()
         cursor = conn.cursor()
         cursor.execute("INSERT INTO categorie (nom_cat) VALUES (?)",(nom_cat,))
         conn.commit()
@@ -38,7 +38,7 @@ def inserer_produit(lib_p, qte_p, pu_p, id_categorie):
 def lister_categorie():
     categories = []
     try:
-        conn = crer_une_connexion()
+        conn = creer_une_connexion()
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM categorie")
         categories = cursor.fetchall()

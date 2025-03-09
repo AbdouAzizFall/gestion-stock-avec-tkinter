@@ -1,6 +1,6 @@
 import sqlite3
 
-def crer_une_connexion():
+def creer_une_connexion():
     try:
         conn = sqlite3.connect('gestion_de_stock.db')
         print("Connexion à SQLite réussie")
@@ -12,7 +12,7 @@ def crer_une_connexion():
 
 def creer_tables():
     try:
-        conn = crer_une_connexion()
+        conn = creer_une_connexion()
         cursor = conn.cursor()
 
         cursor.execute('''
