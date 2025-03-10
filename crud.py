@@ -71,7 +71,7 @@ def lister_produit():
 #lister_produit()
 def modifier_categorie(id_cat,nouveau_nom):
     try:
-        conn = crer_une_connexion()
+        conn = creer_une_connexion()
         cursor = conn.cursor()
         cursor.execute("UPDATE categorie set nom_cat =? WHERE id_cat =?",(nouveau_nom,id_cat))
         conn.commit()
@@ -100,8 +100,9 @@ def modifier_produit(id_p,n_nom,n_qte,n_pu,n_categorie):
             conn.close()
 #modifier_produit(1,"Timberland",12,25000,2)
 def supprimer_categorie(id_cat):
+    conn = None
     try:
-        conn = crer_une_connexion()
+        conn = creer_une_connexion()
         cursor = conn.cursor()
         cursor.execute("DELETE FROM categorie WHERE id_cat=?",(id_cat,))
         conn.commit()
